@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    
+
+    {% block head %}
+        
+        <title>Rocketseat - Sobre</title>
+        
+    {% endblock %}
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+
+        <div class="menuItem">
+            <a href="/"><i class="fas fa-info-circle fa-2x"></i></a>
+            <p>Sobre</p> 
+        </div>
+        <div class="menuItem">
+            <a href="https://discordapp.com/invite/gCRAFhc" target="_blank"><i class="fab fa-discord fa-2x"></i></a>
+            <p>Comunidade</p> 
+        </div>
+        <div class="menuItem">
+            <a href="mailto:oi@rocketseat.com.br"><i class="fas fa-envelope fa-2x"></i></a>
+            <p>Email</p> 
+        </div>
+        <div class="menuItem">
+            <a href="tel:+5547992078767"><i class="fas fa-phone fa-2x"></i></a>
+            <p>Telefone</p> 
+        </div>
+        <div class="menuItem">
+            <a href="/courses"><i class="fas fa-graduation-cap fa-2x"></i></a>
+            <p>Cursos</p> 
+        </div>
+        
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer>
+        <a href="https://github.com/Rocketseat" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/rocketseat_oficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/rocketseat/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+</body>
+</html>

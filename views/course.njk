@@ -1,0 +1,25 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+
+    <title>Rocketseat - {{course.title}}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="content">
+
+            <img src="{{course.logo_img}}" alt="">
+            <div class="courseDesc">
+                <p>{{course.desc}}</p>
+            </div>
+            <a href="https://rocketseat.com.br/{{course.id}}" target="_blank"><button id="courseBtn">Acessar Página do Curso</button></a>
+        
+    </div>
+    
+    <script src="scripts.js"></script>
+    
+{% endblock %}
