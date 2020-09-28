@@ -1,12 +1,11 @@
 @import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
 
 :root {
-    --primary: #cad2c5;
-    --secondary: #354f52;
-    --shade03: #52796f;
-    --shade04: #84a98c;
-    --background: #2f3e46;
-    --text: white;
+    --primary: #4682FC;
+    --secondary: #7bf1a8;
+    --background: #232937;
+    --text: #3c3f42;
+    --title: #4b5157;
 }
 
 * {
@@ -26,7 +25,7 @@ body {
 }
 
 header {
-    background-color: var(--secondary);
+    background-color: var(--primary);
     width: 100%;
     padding: 32px;
     text-align: center;
@@ -41,6 +40,34 @@ header .menuItem:nth-child(1) {
     margin-right: 32px;
 }
 
+header .menuItem {
+    position: relative;
+}
+
+header .menuItem::after {
+    content: "";
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 5px;
+    background-color: var(--secondary);
+    left: -10%;
+    bottom: -32px;
+    transition: width ease-in-out 0.3s;
+}
+
+header .menuItem:hover::after {
+    content: "";
+    position: absolute;
+    visibility: visible;
+    width: 120%;
+    height: 5px;
+    background-color: var(--secondary);
+    left: -10%;
+    bottom: -32px;
+    transition: width ease-in-out 0.3s;
+}
+
 header .menuItem a {
     color: white;
     text-decoration: none;
@@ -49,13 +76,13 @@ header .menuItem a {
 header .menuItem.active p,
 header .menuItem.active a {
     font-weight: bold;
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 header .menuItem:hover,
 header .menuItem:hover a {
     cursor: pointer;
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -83,22 +110,30 @@ header .menuItem:hover a {
 
 .card section.details {
     width: 500px;
-    height: 600px;
+    min-height: 600px;
     position: relative;
     right: 0;
     background-color: white;
     color: black;
     padding: 16px;
-    box-sizing: border-box;
     clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
 }
 
 .details-wrap {
-    filter: drop-shadow(8px 0px 4px rgba(50, 50, 0, 0.7));
+    filter: drop-shadow(8px 0px 4px rgba(0, 0, 0, 0.7));
 }
 
 .card section.details div.details-content {
     padding-right: 100px;
+}
+
+.card section.details div.details-content h1, h2, h3 {
+    color: var(--primary);
+    line-height: 38px;
+}
+
+.card section.details div.details-content p {
+    color: var(--text);
 }
 
 
@@ -110,4 +145,42 @@ header .menuItem:hover a {
     to {
         opacity: 1;
     }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                DETAILS ITEMS                               */
+/* -------------------------------------------------------------------------- */
+
+.details .item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 16px 0;
+}
+
+.details .item:last-child {
+    border: none;
+}
+
+.details .item div:nth-child(1) {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.7px;
+    font-weight: normal;
+    color: var(--title);
+}
+
+.details .item div:nth-child(2) {
+    color: var(--text);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details .item span {
+    padding: 8px 16px;
+    background-color: var(--primary);
+    border-radius: 8px;
+    color: white;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    font-size: 16px;
 }
