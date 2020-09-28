@@ -184,3 +184,85 @@ header .menuItem:hover a {
     display: inline-block;
     font-size: 16px;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                    FORM                                    */
+/* -------------------------------------------------------------------------- */
+
+form input {
+    width: 100%;
+    outline: none;
+    color: var(--text);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+form input[type="radio"] {
+    width: initial;
+}
+
+form input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+form button[type="submit"] {
+    padding: 12px 32px;
+    background-color: var(--secondary);
+    border-radius: 4px;
+    margin-top: 32px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}    .select select {
+        margin-top: 8px;
+        font-weight: bold;
+        font-size: 16px;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        outline: 0;
+        border: 0px dashed #fff;
+        border-radius: 8px;
+        background: #4682fc;
+        color: #ffffff;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+        .select select::-ms-expand {
+            display: none;
+        }
+        .select select:hover,
+        .select select:focus {
+            color: #ffffff;
+            background: #4682fc;
+        }
+        .select select:disabled {
+            opacity: 0;
+            pointer-events: none;
+        }
+.select_arrow {
+    margin-top: 8px;
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 8px 5px 0px 5px;
+    border-color: #ffffff transparent transparent transparent;
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+    border-top-color: #ffffff;
+}
+.select select:disabled ~ .select_arrow {
+    border-top-color: #ffffff;
+}
