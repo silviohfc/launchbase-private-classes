@@ -99,13 +99,11 @@ header .menuItem:hover a {
 }
 
 .card section.avatar {
-    background: url(https://source.unsplash.com/collection/1096192/) no-repeat left center;
-    width: 100%;
+    width: 400px;
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
-    
+    right: 0;
 }
 
 .card section.details {
