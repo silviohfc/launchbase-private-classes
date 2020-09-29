@@ -204,7 +204,8 @@ form input::placeholder {
     font-weight: normal;
 }
 
-form button[type="submit"] {
+form button[type="submit"],
+a.button {
     padding: 12px 32px;
     background-color: var(--secondary);
     border-radius: 4px;
@@ -212,7 +213,39 @@ form button[type="submit"] {
     width: 100%;
     font-size: 16px;
     cursor: pointer;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    z-index: 1;
 }
+
+a.button {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary);
+}
+
+form button[type="submit"]::after,
+a.button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    z-index: -1;
+    transition: width ease-in-out .2s;
+}
+
+a.button:hover::after, form button[type="submit"]:hover::after {
+    width: 100%;
+}
+
 
 .select {
     position: relative;
