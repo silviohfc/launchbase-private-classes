@@ -8,83 +8,10 @@
         <div class="details-wrap">
             <section class="details">
                 <div class="details-content">
+                    
                     <h3>New Teacher</h3>
 
-                    <div class="item">
-                        <div>Avatar URL</div>
-                        <div>
-                            <input 
-                                type="text"
-                                name="avatar_url"
-                                placeholder="http://"
-                            >
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div>Teacher</div>
-                        <div>
-                            <input 
-                                type="text"
-                                name="name"
-                                placeholder="Teacher's name"
-                            >
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div>Birth Date</div>
-                        <div>
-                            <input 
-                                type="date"
-                                name="birth"
-                            >
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div>Degree Level</div>
-                        <div class="select">
-                            <select name="degree">
-                                <option value="high_school" selected>High School</option>
-                                <option value="associate">Associate's Degree</option>
-                                <option value="bachelor">Bachelor's Degree</option>
-                                <option value="master">Master's Degree</option>
-                                <option value="doctoral">Doctoral Degree</option>
-                                <option value="professional">Professional Degree</option>
-                            </select>
-                            <div class="select_arrow"></div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div>Class Type</div>
-                        <div>
-                            <label for="online">
-                                <span>
-                                    <input type="radio" name="class_type" id="online" value="Online" checked>
-                                    Online
-                                </span>
-                            </label>
-                            <label for="traditional">
-                                <span>
-                                    <input type="radio" name="class_type" id="traditional" value="Traditional"> 
-                                    Traditional
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div>Subjects</div>
-                        <div>
-                            <input 
-                                type="text"
-                                name="subjects"
-                                placeholder="Separate by ',' (Ex.: Math, English)"
-                            >
-                        </div>
-                    </div>
+                    {% include 'teachers/fields.njk' %}
 
                     <button type="submit">Create</button>
 

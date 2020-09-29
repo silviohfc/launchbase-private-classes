@@ -1,0 +1,79 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input 
+            type="text"
+            name="avatar_url"
+            placeholder="http://"
+            value="{{ teacher.avatar_url }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Teacher</div>
+    <div>
+        <input 
+            type="text"
+            name="name"
+            placeholder="Teacher's name"
+            value="{{ teacher.name }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Birth Date</div>
+    <div>
+        <input 
+            type="date"
+            name="birth"
+            value="{{ teacher.birth }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Degree Level</div>
+    <div class="select">
+        <select name="degree">
+            <option value="high_school" {% if teacher.degree == "high_school" %} selected {% endif %}>High School</option>
+            <option value="associate" {% if teacher.degree == "associate" %} selected {% endif %}>Associate's Degree</option>
+            <option value="bachelor" {% if teacher.degree == "bachelor" %} selected {% endif %}>Bachelor's Degree</option>
+            <option value="master" {% if teacher.degree == "master" %} selected {% endif %}>Master's Degree</option>
+            <option value="doctoral" {% if teacher.degree == "doctoral" %} selected {% endif %}>Doctoral Degree</option>
+            <option value="professional" {% if teacher.degree == "professional" %} selected {% endif %}>Professional Degree</option>
+        </select>
+        <div class="select_arrow"></div>
+    </div>
+</div>
+
+<div class="item">
+    <div>Class Type</div>
+    <div>
+        <label for="online">
+            <span>
+                <input type="radio" name="class_type" id="online" value="Online" {% if teacher.class_type == "Online" %} checked {% endif %}>
+                Online
+            </span>
+        </label>
+        <label for="traditional">
+            <span>
+                <input type="radio" name="class_type" id="traditional" value="Traditional" {% if teacher.class_type == "Traditional" %} checked {% endif %}> 
+                Traditional
+            </span>
+        </label>
+    </div>
+</div>
+
+<div class="item">
+    <div>Subjects</div>
+    <div>
+        <input 
+            type="text"
+            name="subjects"
+            placeholder="Separate by ',' (Ex.: Math, English)"
+            value="{{ teacher.subjects }}"
+        >
+    </div>
+</div>

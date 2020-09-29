@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('./data.json')
-const { age, graduation } = require('./utils')
+const { age, graduation, date } = require('./utils')
 
 // Show
 exports.show = (req, res) => {
@@ -25,7 +25,7 @@ exports.show = (req, res) => {
 }
 
 // Create
-exports.post = (req, res) => {
+exports.create = (req, res) => {
 
     const keys = Object.keys(req.body)
 
@@ -60,6 +60,51 @@ exports.post = (req, res) => {
 
 }
 
+// Edit
+exports.edit = (req, res) => {
+    const { id } = req.params
+
+    const foundTeacher = data.teachers.find(teacher => {
+        return teacher.id == id
+    })
+
+    if (!foundTeacher) return res.send("Teacher not found!")
+
+    const teacher = {
+        ...foundTeacher,
+        birth: date(foundTeacher.birth)
+    }
+
+    return res.render("teachers/edit", { teacher })
+}
+
 // Update
+exports.update = (req, res) => {
+    const { id } = req.body
+    let index = 0
+
+    const foundTeacher = data.teachers.find((teacher, foundIndex) => {
+        if (id == teacher.id) {
+            index = foundIndex
+            return true
+        }
+    })
+
+    if (!foundTeacher) return res.send("Teacher not found!")
+
+    const teacher = {
+        ...foundTeacher,
+        ...req.body,
+        birth: Date.parse(req.body.birth)
+    }
+
+    data.teachers[index] = teacher
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), err => {
+        if(err) return res.send("Write file error!")
+
+        return res.redirect(`/teachers/${id}`)
+    })
+}
 
 // Delete
