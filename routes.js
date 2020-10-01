@@ -25,6 +25,8 @@ routes.post("/teachers", teachers.create)
 
 routes.put("/teachers", teachers.update)
 
+routes.delete("/teachers", teachers.delete)
+
 /* -------------------------------------------------------------------------- */
 /*                                  STUDENTS                                  */
 /* -------------------------------------------------------------------------- */

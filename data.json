@@ -1,13 +1,3 @@
 {
-  "teachers": [
-    {
-      "id": 1,
-      "avatar_url": "https://www.nea.org/sites/default/files/legacy/2020/04/new_teacher.jpeg",
-      "name": "Ericka Marshall",
-      "birth": 597888000000,
-      "degree": "doctoral",
-      "class_type": "Online",
-      "subjects": "Math, English",
-      "created_at": 1601388557856
-    }]
+  "teachers": []
 }
