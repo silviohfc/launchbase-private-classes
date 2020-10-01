@@ -3,48 +3,36 @@
 
 {% block content %}
     
-    <div class="card">
-        <section class="avatar"></section>
-        <div class="details-wrap">
-            <section class="details">
-                <div class="details-content">
-                    <h3>Details</h3>
+    <div class="card table-container">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Teacher</th>
+                    <th>Subjects</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
 
-                    <div class="item">
-                        <div>Teacher</div>
-                        <div>Erick Marshall</div>
-                    </div>
-
-                    <div class="item">
-                        <div>Age</div>
-                        <div>42</div>
-                    </div>
-
-                    <div class="item">
-                        <div>Degree Level</div>
-                        <div>High School</div>
-                    </div>
-
-                    <div class="item">
-                        <div>Class Type</div>
-                        <div>Online</div>
-                    </div>
-
-                    <div class="item">
-                        <div>Subjects</div>
-                        <div>
-                            <span>Math</span>
-                            <span>English</span>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div>Since</div>
-                        <div>01/01/1000</div>
-                    </div>
-                </div>
-            </section>
-        </div>
+            <tbody>
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{ teacher.avatar_url }});"></span>
+                            {{ teacher.name }}
+                        </td>
+                        <td>
+                            {% for subject in teacher.subjects.split(',') %}
+                                <span class="subject">{{ subject }}</span>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            <a href="/teachers/{{ teacher.id }}"><i class="fas fa-eye"></i></a>
+                            <a href="/teachers/{{ teacher.id }}/edit"><i class="fas fa-pen"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 
 {% endblock content %}

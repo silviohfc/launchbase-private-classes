@@ -172,6 +172,7 @@ header .menuItem:hover a {
     font-size: 18px;
 }
 
+.subject,
 .details .item span {
     padding: 8px 16px;
     background-color: var(--primary);
@@ -181,6 +182,11 @@ header .menuItem:hover a {
     margin-top: 8px;
     display: inline-block;
     font-size: 16px;
+}
+
+.subject:last-child,
+.details .item span:last-child {
+    margin-right: 0;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -304,4 +310,76 @@ a.button:hover::after, form button[type="submit"]:hover::after {
     background-color: #d32f2f;
     width: 100%;
     color: white;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               INDEX TEACHERS                               */
+/* -------------------------------------------------------------------------- */
+
+.table-container {
+    background-color: white;
+    max-height: 700px;
+    overflow: auto;
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+.table-container thead tr th {
+    text-align: left;
+}
+
+thead {
+    background-color: var(--primary);
+    color: white;
+}
+
+td, th {
+    padding: 16px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+tbody tr:hover {
+    background-color: rgb(247, 247, 247);
+}
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+tbody tr td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+}
+
+td a {
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+}
+td a:first-child {
+    margin-right: 4px;
+}
+td a:hover {
+    opacity: 0.9;
+}
+td a:nth-child(1) {
+    background-color: var(--primary);
+    filter: brightness(1.6);
+}
+td a:nth-child(2) {
+    background-color: #fb8c00;
+}
+
+.table-container thead tr th:last-child,
+td:last-child {
+    text-align: center;
 }
