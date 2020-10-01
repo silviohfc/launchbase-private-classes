@@ -36,8 +36,12 @@ header {
     box-sizing: border-box;
 }
 
-header .menuItem:nth-child(1) {
-    margin-right: 32px;
+header a {
+    margin-left: 32px;
+}
+
+header a:first-child {
+    margin-left: 0;
 }
 
 header .menuItem {
@@ -68,13 +72,13 @@ header .menuItem:hover::after {
     transition: width ease-in-out 0.3s;
 }
 
-header .menuItem a {
+header a {
     color: white;
     text-decoration: none;
 }
 
-header .menuItem.active p,
-header .menuItem.active a {
+header a.active p,
+header a.active .menuItem {
     font-weight: bold;
     color: var(--secondary);
 }
@@ -108,7 +112,7 @@ header .menuItem:hover a {
 
 .card section.details {
     width: 500px;
-    min-height: 600px;
+    min-height: 500px;
     position: relative;
     right: 0;
     background-color: white;
@@ -211,7 +215,8 @@ form input::placeholder {
 }
 
 form button[type="submit"],
-a.button {
+a.button,
+#newBtn {
     padding: 12px 32px;
     background-color: var(--secondary);
     border-radius: 4px;
@@ -229,11 +234,12 @@ a.button {
     text-align: center;
     text-decoration: none;
     color: white;
-    background-color: var(--primary);
+    background-color:  #fb8c00;
 }
 
 form button[type="submit"]::after,
-a.button::after {
+a.button::after,
+#newBtn::after {
     content: "";
     position: absolute;
     top: 0;
@@ -248,7 +254,7 @@ a.button::after {
     transition: width ease-in-out .2s;
 }
 
-a.button:hover::after, form button[type="submit"]:hover::after {
+a.button:hover::after, form button[type="submit"]:hover::after, #newBtn:hover::after {
     width: 100%;
 }
 
@@ -319,6 +325,14 @@ a.button:hover::after, form button[type="submit"]:hover::after {
 .table-container {
     background-color: white;
     max-height: 700px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 48px;
+    grid-gap: 0px;
+}
+
+.table-container div.table {
+    max-height: 700px;
     overflow: auto;
 }
 
@@ -382,4 +396,22 @@ td a:nth-child(2) {
 .table-container thead tr th:last-child,
 td:last-child {
     text-align: center;
+}
+
+#newBtn {
+    margin-top: 0;
+    padding: 12px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--secondary);
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 0;
+    box-shadow: 0px -6px 20px -15px black;
+}
+
+#newBtn::after{
+    border-radius: 0;
 }
