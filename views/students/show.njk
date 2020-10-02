@@ -4,47 +4,38 @@
 {% block content %}
     
     <div class="card">
-        <section class="avatar" style="background: url({{ teacher.avatar_url }}) no-repeat center;"></section>
+        <section class="avatar" style="background: url({{ student.avatar_url }}) no-repeat center; background-size: cover;"></section>
         <div class="details-wrap">
             <section class="details">
                 <div class="details-content">
                     <h3>Details</h3>
 
                     <div class="item">
-                        <div>Teacher</div>
-                        <div>{{ teacher.name }}</div>
+                        <div>Student</div>
+                        <div>{{ student.name }}</div>
                     </div>
 
                     <div class="item">
-                        <div>Age</div>
-                        <div>{{ teacher.age }}</div>
+                        <div>Birth Date</div>
+                        <div>{{ student.birth }}</div>
                     </div>
 
                     <div class="item">
-                        <div>Degree Level</div>
-                        <div>{{ teacher.degree }}</div>
+                        <div>Email</div>
+                        <div>{{ student.email }}</div>
                     </div>
 
                     <div class="item">
-                        <div>Class Type</div>
-                        <div>{{ teacher.class_type }}</div>
+                        <div>Grade</div>
+                        <div>{{ student.grade }}</div>
                     </div>
 
                     <div class="item">
-                        <div>Subjects</div>
-                        <div>
-                            {% for subject in teacher.subjects %}
-                                <span>{{subject}}</span>
-                            {% endfor %}
-                        </div>
+                        <div>Hourly Schedule</div>
+                        <div>{{ student.hours }}</div>
                     </div>
 
-                    <div class="item">
-                        <div>Since</div>
-                        <div>{{ teacher.created_at }}</div>
-                    </div>
-
-                    <a href="/teachers/{{ teacher.id }}/edit" class="button">Edit</a>
+                    <a href="/students/{{ student.id }}/edit" class="button">Edit</a>
                 </div>
             </section>
         </div>

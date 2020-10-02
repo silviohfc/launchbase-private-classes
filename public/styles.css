@@ -108,6 +108,7 @@ header .menuItem:hover a {
     position: absolute;
     top: 0;
     right: 0;
+    background-size: 100px;
 }
 
 .card section.details {
