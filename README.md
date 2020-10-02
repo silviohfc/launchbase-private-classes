@@ -8,7 +8,9 @@
     <a href="https://www.linkedin.com/in/silviohfc/">
         <img alt="Made by silviohfc" src="https://img.shields.io/badge/made%20by-silviohfc-orange">
     </a>
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
+    <a href="https://github.com/silviohfc/launchbase-private-classes/blob/master/LICENSE">
+        <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
+    </a>
 </p>
 <p align="center">
     <img src="https://lh4.googleusercontent.com/OPdynnD8nnafmXVxsXSUpPOz2_8FrWtrIIO32ovp6ka1i0Kt1OnTNStjzIGMRZvGy-ZM2RBeWykuQw=w2560-h981-rw" width="500">
