@@ -13,7 +13,7 @@
     </a>
 </p>
 <p align="center">
-    <img src="hhttps://i.ibb.co/ZMnjFpB/smartmockups-kfskc8bc.png" width="500">
+    <img src="https://i.ibb.co/ZMnjFpB/smartmockups-kfskc8bc.png" width="500">
 </p>
 <hr/>
 
