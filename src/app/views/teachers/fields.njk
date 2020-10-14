@@ -53,7 +53,7 @@
     <div>
         <label for="online">
             <span>
-                <input type="radio" name="class_type" id="online" value="Online" {% if teacher.class_type == "Online" %} checked {% endif %}>
+                <input type="radio" name="class_type" id="online" value="Online" {% if teacher.class_type == "Online" or teacher.class_type == null %} checked {% endif %}>
                 Online
             </span>
         </label>

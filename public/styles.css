@@ -399,6 +399,11 @@ td:last-child {
     text-align: center;
 }
 
+.table-container thead tr th:nth-last-child(2),
+td:nth-last-child(2) {
+    text-align: center;
+}
+
 #newBtn {
     margin-top: 0;
     padding: 12px;
