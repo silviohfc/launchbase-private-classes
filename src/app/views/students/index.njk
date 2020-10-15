@@ -3,6 +3,25 @@
 
 {% block content %}
 
+    <div class="contentHeader">
+        <form action="/students" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Name or Email"
+                value="{{filter}}"
+            >
+            <button type="submit">Filter</button>
+        </form>
+
+        <div class="pagination"
+            data-page="{{ pagination.page }}"
+            data-total="{{ pagination.total }}"
+            data-filter="{{ filter }}"
+        ></div>
+        
+    </div>
+
     <div class="card table-container">
         <div class="table">
             <table width="100%">

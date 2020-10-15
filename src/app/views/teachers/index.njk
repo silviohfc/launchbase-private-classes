@@ -13,6 +13,12 @@
             >
             <button type="submit">Filter</button>
         </form>
+
+        <div class="pagination"
+            data-page="{{ pagination.page }}"
+            data-total="{{ pagination.total }}"
+            data-filter="{{ filter }}"
+        ></div>
         
     </div>
 
@@ -38,7 +44,11 @@
                             </td>
                             <td>
                                 {% for subject in teacher.subjects.split(',') %}
-                                    <span class="subject">{{ subject }}</span>
+                                    {% if not subject %}
+                                        <span class="subject">Without Subjects</span>
+                                    {% else %}
+                                        <span class="subject">{{ subject }}</span>
+                                    {% endif %}
                                 {% endfor %}
                             </td>
                             <td>
