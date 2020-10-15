@@ -397,6 +397,19 @@ td a:nth-child(2) {
 .table-container thead tr th:last-child,
 td:last-child {
     text-align: center;
+    min-width: 100px;
+}
+
+.table-container thead tr th:nth-last-child(2),
+td:nth-last-child(2) {
+    text-align: center;
+    min-width: 120px;
+}
+
+.table-container thead tr th:nth-last-child(3),
+td:nth-last-child(3) {
+    max-width: 300px;
+    overflow-x: hidden;
 }
 
 #newBtn {
@@ -415,4 +428,73 @@ td:last-child {
 
 #newBtn::after{
     border-radius: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   FILTERS                                  */
+/* -------------------------------------------------------------------------- */
+
+.contentHeader {
+    margin: 32px auto 0;
+    width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
+    align-items: center;
+}
+
+.contentHeader form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    grid-gap: 8px;
+}
+
+.contentHeader form button{
+    margin: 0;
+    background-color: var(--primary);
+    color: white;
+}
+
+.contentHeader form input{
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 9px;
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 PAGINATION                                 */
+/* -------------------------------------------------------------------------- */
+
+.contentHeader .pagination {
+    justify-self: end;
+}
+
+.pagination a,
+.pagination span{
+    color: white;
+    text-decoration: none;
+    margin-right: 8px;
+    background-color: var(--primary);
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    filter:brightness(1.3)
+}
+
+.pagination a.active {
+    border: solid 2px var(--secondary);
+    cursor: initial;
+    filter: brightness(1);
+}
+.pagination span {
+    filter: brightness(0.5);
+    cursor: initial;
+}
+
+.pagination span:last-child {
+    margin: 0;
 }

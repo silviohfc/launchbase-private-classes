@@ -3,13 +3,34 @@
 
 {% block content %}
 
+    <div class="contentHeader">
+        <form action="/teachers" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Name or Subjects"
+                value="{{filter}}"
+            >
+            <button type="submit">Filter</button>
+        </form>
+
+        <div class="pagination"
+            data-page="{{ pagination.page }}"
+            data-total="{{ pagination.total }}"
+            data-filter="{{ filter }}"
+        ></div>
+        
+    </div>
+
     <div class="card table-container">
+
         <div class="table">
             <table width="100%">
                 <thead>
                     <tr>
                         <th>Teacher</th>
                         <th>Subjects</th>
+                        <th>Students</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -23,8 +44,15 @@
                             </td>
                             <td>
                                 {% for subject in teacher.subjects.split(',') %}
-                                    <span class="subject">{{ subject }}</span>
+                                    {% if not subject %}
+                                        <span class="subject">Without Subjects</span>
+                                    {% else %}
+                                        <span class="subject">{{ subject }}</span>
+                                    {% endif %}
                                 {% endfor %}
+                            </td>
+                            <td>
+                                {{ teacher.total_students }}
                             </td>
                             <td>
                                 <a href="/teachers/{{ teacher.id }}"><i class="fas fa-eye"></i></a>

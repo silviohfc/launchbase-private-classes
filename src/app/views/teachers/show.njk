@@ -34,7 +34,11 @@
                         <div>Subjects</div>
                         <div>
                             {% for subject in teacher.subjects %}
-                                <span>{{subject}}</span>
+                                {% if not subject %}
+                                    <span class="subject">Without Subjects</span>
+                                {% else %}
+                                    <span class="subject">{{ subject }}</span>
+                                {% endif %}
                             {% endfor %}
                         </div>
                     </div>
