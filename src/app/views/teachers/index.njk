@@ -3,7 +3,21 @@
 
 {% block content %}
 
+    <div class="contentHeader">
+        <form action="/teachers" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Name or Subjects"
+                value="{{filter}}"
+            >
+            <button type="submit">Filter</button>
+        </form>
+        
+    </div>
+
     <div class="card table-container">
+
         <div class="table">
             <table width="100%">
                 <thead>
